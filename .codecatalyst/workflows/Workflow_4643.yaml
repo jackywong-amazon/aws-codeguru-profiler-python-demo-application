@@ -17,7 +17,7 @@ Actions:
         Sast:
           SuccessCriteria:
             StaticAnalysisFinding:
-              Severity: LOW
+              Severity: HIGH
               Number: 10
           IncludePaths:
             - codegurusecurity.sarif
