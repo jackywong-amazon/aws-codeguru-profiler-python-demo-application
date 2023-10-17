@@ -10,37 +10,7 @@ Triggers:
 # Required - Define action configurations.
 Actions:
   
-  Scan-with-codeguru-security_2:
-    Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
-    Outputs:
-      Reports:
-        Sast:
-          SuccessCriteria:
-            StaticAnalysisFinding:
-              Severity: LOW
-              Number: 1
-          IncludePaths:
-            - codegurusecuritydjango.sarif
-          Format: SARIFSA
-      Artifacts:
-        - Name: CodeGuruSecuritySarifdjango
-          Files:
-            - codegurusecuritydjango.sarif
-    Environment:
-      Connections:
-        - Role: CodeCatalystWorkflowStagingRole
-          Name: "556513939552"
-      Name: staging
-    Inputs:
-      Sources:
-        - WorkflowSource
-    Compute:
-      Type: EC2
-    Configuration:
-      GenerateReport: true
-      AWSRegion: us-east-1
-      IncludeQualityScan: false
-      Path: sample-demo-django-app/
+
   Scan-with-codeguru-security_3:
     Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
     Outputs:
