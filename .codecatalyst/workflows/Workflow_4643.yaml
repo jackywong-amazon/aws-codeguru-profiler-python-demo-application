@@ -43,4 +43,5 @@ Actions:
       GenerateReport: true
       AWSRegion: us-east-1
       IncludeQualityScan: false
-      Path: src
+      Path: sample-demo-app/
+
