@@ -21,12 +21,12 @@ Actions:
               Severity: LOW
               Number: 1
           IncludePaths:
-            - codegurusecurityflask.sarif
+            - codegurusecurity.sarif
           Format: SARIFSA
       Artifacts:
-        - Name: CodeGuruSecuritySarifflask
+        - Name: CodeGuruSecurity
           Files:
-            - codegurusecurityflask.sarif
+            - codegurusecurity.sarif
     Environment:
       Connections:
         - Role: CodeCatalystWorkflowStagingRole
