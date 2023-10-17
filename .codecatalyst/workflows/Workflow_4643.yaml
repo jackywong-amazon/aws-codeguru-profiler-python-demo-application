@@ -9,49 +9,7 @@ Triggers:
 
 # Required - Define action configurations.
 Actions:
-  Scan-with-codeguru-security_82:
-    # Identifies the action. Do not modify this value.
-    Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
-    Outputs:
-      Reports:
-        Sast:
-          SuccessCriteria:
-            StaticAnalysisFinding:
-              Severity: LOW
-              Number: 1
-          IncludePaths:
-            - codegurusecuritysample.sarif
-          Format: SARIFSA
-        CopyOfSast:
-          SuccessCriteria:
-            StaticAnalysisFinding:
-              Severity: MEDIUM
-              Number: 2
-          IncludePaths:
-            - codegurusecuritysample.sarif
-          Format: SARIFSA
-      Artifacts:
-        - Name: CodeGuruSecuritySarifsample
-          Files:
-            - codegurusecuritysample.sarif
-    # Required; You can use an environment, AWS account connection, and role to access AWS resources.
-    Environment:
-      Connections:
-        - Role: CodeCatalystWorkflowStagingRole
-          Name: "556513939552"
-      Name: staging
-    # Specifies the source and/or artifacts to pass to the action as input.
-    Inputs:
-      # Optional
-      Sources:
-        - WorkflowSource # This specifies that the action requires this Workflow as a source
-    Compute:
-      Type: EC2
-    Configuration:
-      GenerateReport: true
-      AWSRegion: us-east-1
-      IncludeQualityScan: false
-      Path: sample-demo-app/
+  
   Scan-with-codeguru-security_2:
     Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
     Outputs:
@@ -114,34 +72,3 @@ Actions:
       AWSRegion: us-east-1
       IncludeQualityScan: false
       Path: sample-demo-flask-app/
-  Scan-with-codeguru-security_4:
-    Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
-    Outputs:
-      Reports:
-        Sast:
-          SuccessCriteria:
-            StaticAnalysisFinding:
-              Severity: LOW
-              Number: 1
-          IncludePaths:
-            - codegurusecuritylambda.sarif
-          Format: SARIFSA
-      Artifacts:
-        - Name: CodeGuruSecuritySariflambda
-          Files:
-            - codegurusecuritylambda.sarif
-    Environment:
-      Connections:
-        - Role: CodeCatalystWorkflowStagingRole
-          Name: "556513939552"
-      Name: staging
-    Inputs:
-      Sources:
-        - WorkflowSource
-    Compute:
-      Type: EC2
-    Configuration:
-      GenerateReport: true
-      AWSRegion: us-east-1
-      IncludeQualityScan: false
-      Path: sample-demo-lambda-app/
