@@ -31,7 +31,7 @@ Actions:
             - codegurusecurity.sarif
           Format: SARIFSA
       Artifacts:
-        - Name: CodeGuruSecuritySarif
+        - Name: CodeGuruSecuritySarifsample
           Files:
             - codegurusecurity.sarif
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
@@ -65,7 +65,7 @@ Actions:
             - codegurusecurity.sarif
           Format: SARIFSA
       Artifacts:
-        - Name: CodeGuruSecuritySarif
+        - Name: CodeGuruSecuritySarifdjango
           Files:
             - codegurusecurity.sarif
     Environment:
@@ -96,7 +96,7 @@ Actions:
             - codegurusecurity.sarif
           Format: SARIFSA
       Artifacts:
-        - Name: CodeGuruSecuritySarif
+        - Name: CodeGuruSecuritySarifflask
           Files:
             - codegurusecurity.sarif
     Environment:
@@ -127,7 +127,7 @@ Actions:
             - codegurusecurity.sarif
           Format: SARIFSA
       Artifacts:
-        - Name: CodeGuruSecuritySarif
+        - Name: CodeGuruSecuritySariflambda
           Files:
             - codegurusecurity.sarif
     Environment:
