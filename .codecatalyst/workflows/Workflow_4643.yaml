@@ -1,0 +1,46 @@
+Name: Workflow_4643
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: Push
+    Branches:
+      - main
+
+# Required - Define action configurations.
+Actions:
+  Scan-with-codeguru-security_82:
+    # Identifies the action. Do not modify this value.
+    Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
+    Outputs:
+      Reports:
+        Sast:
+          SuccessCriteria:
+            StaticAnalysisFinding:
+              Severity: LOW
+              Number: 1
+          IncludePaths:
+            - codegurusecurity.sarif
+          Format: SARIFSA
+      Artifacts:
+        - Name: CodeGuruSecuritySarif
+          Files:
+            - codegurusecurity.sarif
+    # Required; You can use an environment, AWS account connection, and role to access AWS resources.
+    Environment:
+      Connections:
+        - Role: CodeCatalystWorkflowStagingRole
+          Name: "556513939552"
+      Name: staging
+    # Specifies the source and/or artifacts to pass to the action as input.
+    Inputs:
+      # Optional
+      Sources:
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
+    Compute:
+      Type: EC2
+    Configuration:
+      GenerateReport: true
+      AWSRegion: us-east-1
+      IncludeQualityScan: false
+      Path: src
