@@ -20,7 +20,7 @@ Actions:
               Severity: LOW
               Number: 1
           IncludePaths:
-            - codegurusecurity.sarif
+            - codegurusecuritysample.sarif
           Format: SARIFSA
         CopyOfSast:
           SuccessCriteria:
@@ -28,12 +28,12 @@ Actions:
               Severity: MEDIUM
               Number: 2
           IncludePaths:
-            - codegurusecurity.sarif
+            - codegurusecuritysample.sarif
           Format: SARIFSA
       Artifacts:
         - Name: CodeGuruSecuritySarifsample
           Files:
-            - codegurusecurity.sarif
+            - codegurusecuritysample.sarif
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
@@ -62,12 +62,12 @@ Actions:
               Severity: LOW
               Number: 1
           IncludePaths:
-            - codegurusecurity.sarif
+            - codegurusecuritydjango.sarif
           Format: SARIFSA
       Artifacts:
         - Name: CodeGuruSecuritySarifdjango
           Files:
-            - codegurusecurity.sarif
+            - codegurusecuritydjango.sarif
     Environment:
       Connections:
         - Role: CodeCatalystWorkflowStagingRole
@@ -93,12 +93,12 @@ Actions:
               Severity: LOW
               Number: 1
           IncludePaths:
-            - codegurusecurity.sarif
+            - codegurusecurityflask.sarif
           Format: SARIFSA
       Artifacts:
         - Name: CodeGuruSecuritySarifflask
           Files:
-            - codegurusecurity.sarif
+            - codegurusecurityflask.sarif
     Environment:
       Connections:
         - Role: CodeCatalystWorkflowStagingRole
@@ -124,12 +124,12 @@ Actions:
               Severity: LOW
               Number: 1
           IncludePaths:
-            - codegurusecurity.sarif
+            - codegurusecuritylambda.sarif
           Format: SARIFSA
       Artifacts:
         - Name: CodeGuruSecuritySariflambda
           Files:
-            - codegurusecurity.sarif
+            - codegurusecuritylambda.sarif
     Environment:
       Connections:
         - Role: CodeCatalystWorkflowStagingRole
