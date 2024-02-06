@@ -29,7 +29,7 @@ Actions:
           LineCoverage: 70
           PassRate: 100
         IncludePaths:
-          - output/codegurusecurity.sarif
+          - codegurusecurity.sarif
         Enabled: true
         ReportNamePrefix: rpt
       Artifacts:
