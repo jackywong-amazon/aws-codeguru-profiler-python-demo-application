@@ -30,7 +30,7 @@ Actions:
           PassRate: 100
         IncludePaths:
           - codegurusecurity.sarif
-        Enabled: true
+        Enabled: false
         ReportNamePrefix: rpt
       Artifacts:
         - Name: CodeGuruSecurity
