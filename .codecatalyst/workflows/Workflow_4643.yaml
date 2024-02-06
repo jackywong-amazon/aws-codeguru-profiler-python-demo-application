@@ -13,6 +13,15 @@ Actions:
   ScanWithAmazonCodeGuruSecurity_ee:
     # Identifies the action. Do not modify this value.
     Identifier: codecatalyst-labs/scan-with-codeguru-securityy2pzi@v1.0.0
+    Outputs:
+      AutoDiscoverReports:
+        SuccessCriteria:
+          Vulnerabilities:
+            Severity: LOW
+          StaticAnalysisBug:
+            Severity: INFORMATIONAL
+        Enabled: true
+        ReportNamePrefix: rpt
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
