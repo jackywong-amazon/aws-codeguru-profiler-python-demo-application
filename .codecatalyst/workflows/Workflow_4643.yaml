@@ -10,34 +10,23 @@ Triggers:
 # Required - Define action configurations.
 Actions:
 
-  Scan-with-codeguru-security_3:
-    Identifier: builders-experience/scan-with-codeguru-security-devzeau5@v0.0.3
-    Outputs:
-      Reports:
-        Sast:
-          SuccessCriteria:
-            StaticAnalysisFinding:
-              Severity: HIGH
-              Number: 10
-          IncludePaths:
-            - codegurusecurity.sarif
-          Format: SARIFSA
-      Artifacts:
-        - Name: CodeGuruSecurity
-          Files:
-            - codegurusecurity.sarif
+  ScanWithAmazonCodeGuruSecurity_ee:
+    # Identifies the action. Do not modify this value.
+    Identifier: codecatalyst-labs/scan-with-codeguru-securityy2pzi@v1.0.0
+    # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
         - Role: CodeCatalystWorkflowStagingRole
           Name: "556513939552"
       Name: staging
+    # Specifies the source and/or artifacts to pass to the action as input.
     Inputs:
+      # Optional
       Sources:
-        - WorkflowSource
+        - WorkflowSource # This specifies that the action requires this Workflow as a source
     Compute:
       Type: EC2
     Configuration:
       GenerateReport: true
-      AWSRegion: us-east-1
-      IncludeQualityScan: false
-      Path: sample-demo-flask-app/
+      IncludeQualityScan: true
+      Path: .
