@@ -29,9 +29,13 @@ Actions:
           LineCoverage: 70
           PassRate: 100
         IncludePaths:
-          - output/report.xml
+          - output/codegurusecurity.sarif
         Enabled: true
         ReportNamePrefix: rpt
+      Artifacts:
+        - Name: CodeGuruSecurity
+          Files:
+            - codegurusecurity.sarif
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
