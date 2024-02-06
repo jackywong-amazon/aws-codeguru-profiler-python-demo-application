@@ -20,6 +20,16 @@ Actions:
             Severity: LOW
           StaticAnalysisBug:
             Severity: INFORMATIONAL
+          StaticAnalysisSecurity:
+            Severity: INFORMATIONAL
+          StaticAnalysisQuality:
+            Severity: INFORMATIONAL
+          StaticAnalysisFinding:
+            Severity: INFORMATIONAL
+          LineCoverage: 70
+          PassRate: 100
+        IncludePaths:
+          - output/report.xml
         Enabled: true
         ReportNamePrefix: rpt
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
