@@ -15,22 +15,9 @@ Actions:
     Identifier: codecatalyst-labs/scan-with-codeguru-securityy2pzi@v1.0.0
     Outputs:
       AutoDiscoverReports:
-        SuccessCriteria:
-          Vulnerabilities:
-            Severity: LOW
-          StaticAnalysisBug:
-            Severity: INFORMATIONAL
-          StaticAnalysisSecurity:
-            Severity: INFORMATIONAL
-          StaticAnalysisQuality:
-            Severity: INFORMATIONAL
-          StaticAnalysisFinding:
-            Severity: INFORMATIONAL
-          LineCoverage: 70
-          PassRate: 100
         IncludePaths:
           - codegurusecurity.sarif
-        Enabled: false
+        Enabled: true
         ReportNamePrefix: rpt
       Artifacts:
         - Name: CodeGuruSecurity
@@ -51,5 +38,6 @@ Actions:
       Type: EC2
     Configuration:
       GenerateReport: true
+      AWSRegion: ap-southeast-2
       IncludeQualityScan: false
       Path: .
