@@ -27,10 +27,6 @@ Actions:
           IncludePaths:
             - codegurusecurity.sarif
           Format: SARIFSA
-        codeCoverageReport:
-          Format: CLOVERXML
-          IncludePaths:
-            - report.xml
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
