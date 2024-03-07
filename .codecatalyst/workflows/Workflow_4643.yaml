@@ -15,18 +15,22 @@ Actions:
     Identifier: codecatalyst-labs/scan-with-codeguru-securityy2pzi@v1.0.0
     Outputs:
       Reports:
-        UntitledReport:
+        SoftwareCompositionAnylysisReport:
           IncludePaths:
             - codegurusecurity.sarif
           Format: SARIFSCA
-        UntitledReport2:
-          IncludePaths:
-            - codegurusecurity.sarif
-          Format: SARIFSA
+        StaticAnalysisReport:
           SuccessCriteria:
             StaticAnalysisFinding:
               Number: 0
               Severity: CRITICAL
+          IncludePaths:
+            - codegurusecurity.sarif
+          Format: SARIFSA
+        codeCoverageReport:
+          Format: CLOVERXML
+          IncludePaths:
+            - report.xml
     # Required; You can use an environment, AWS account connection, and role to access AWS resources.
     Environment:
       Connections:
